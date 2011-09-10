@@ -2,6 +2,8 @@ class Image < ActiveRecord::Base
   
   belongs_to :page, :foreign_key => "parent_id"
   
+  # has_attached_file :document
+  
   has_attached_file :data,
     :styles => {
       :galery => {:geometry => "640x640>", :quality => 92}, 

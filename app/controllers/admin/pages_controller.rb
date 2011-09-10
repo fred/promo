@@ -54,11 +54,11 @@ class Admin::PagesController < Admin::BaseController
   # POST /pages.xml
   def create
     @page = Page.new(params[:page])
-    expire_page :action => :index
-    expire_page :action => :home
 
     respond_to do |format|
       if @page.save
+        expire_page "/#{@page.permalink}"
+        expire_page "/pages/#{@page.permalink}"
         format.html { redirect_to(admin_page_path(@page), :notice => 'Page was successfully created.') }
         format.xml  { render :xml => @page, :status => :created, :location => @page }
       else

@@ -1,14 +1,13 @@
-set :application, "hotelmingood.com"
-set :repository,  "git@frederico-araujo.com:mingood"
+set :application, "promo"
+set :repository,  "git://github.com/fred/promo.git"
 set :branch, "master"
-set :domain, "hotelmingood.com"
+set :domain, "globalpeacenow.com"
 set :scm, :git
 set :deploy_via, :remote_cache
 set :rails_env, "production"
-set :user, "fred"
+set :user, "diaspora"
 set :use_sudo,  false
-#set :git_enable_submodules, 1
-set :deploy_to, "/var/www/apps/#{application}"
+set :deploy_to, "/home/diaspora/#{application}"
 set :mongrel_port, "3006"
 
 role :web, domain
@@ -24,9 +23,8 @@ ssh_options[:paranoid] = false
 # RVM 
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"                  # Load RVM's capistrano plugin.
-set :rvm_ruby_string, 'ruby-1.9.3-head@mingood'  # Or whatever env you want it to run in.
+set :rvm_ruby_string, 'ruby-1.9.2-p290@promo' # Or whatever env you want it to run in.
 set :rvm_type, :user
-# "ruby-1.9.3-head@mingood"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
@@ -95,13 +93,13 @@ namespace(:customs) do
     run "ln -nfs #{shared_path}/config/database.yml #{current_path}/config/database.yml"
   end
   task :symlink, :roles => :app do
-    run "echo \"rvm ruby-1.9.3-head@mingood\" > #{current_path}/.rvmrc"
     run "if [ -d #{current_path}/public/system ]; then rm -rf #{current_path}/public/system; fi"
     run "mkdir -p #{current_path}/tmp/cache"
     run "mkdir -p #{current_path}/tmp/sessions"
     run "ln -nfs  #{shared_path}/system #{release_path}/public/system"
+    run "echo \"rvm use ruby-1.9.2-p290@promo\" > #{current_path}/.rvmrc"
     run "cd #{current_path} && bundle install"
-    # run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
+    run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
   end
 end
 
