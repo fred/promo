@@ -326,14 +326,14 @@ color: #ffffff;
 
 #footer_top_column1{
 float: left;
-width: 175px;
+width: 275px;
 padding-left: 25px;
 }
 
 #footer_top_column2{
 float: left;
-padding-left: 25px;
-width: 240px;
+padding-left: 15px;
+width: 520px;
 }
 
 #footer_top_column2 p{

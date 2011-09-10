@@ -1,0 +1,33 @@
+<div id="twitter">
+  <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+  <script>
+  new TWTR.Widget({
+    version: 2,
+    type: 'profile',
+    rpp: 12,
+    interval: 99000,
+    width: 'auto',
+    height: 120,
+    theme: {
+      shell: {
+        background: 'transparent',
+        color: '#F07905'
+      },
+      tweets: {
+        background: 'transparent',
+        color: '#eee',
+        links: '#F07905'
+      }
+    },
+    features: {
+      scrollbar: true,
+      loop: false,
+      live: true,
+      hashtags: true,
+      timestamp: true,
+      avatars: false,
+      behavior: 'all'
+    }
+  }).render().setUser('PeaceLibya').start();
+  </script>
+</div>
