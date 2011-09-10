@@ -17,8 +17,10 @@ class PagesController < ApplicationController
     @page = Page.where(:permalink => params[:permalink]).first if params[:permalink]
     @page = Page.where(:permalink => params[:id]).first if params[:id]
     # @page = Page.where(:permalink => params[:id]).first
+    @page = @home_page if @page.nil?
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @page }
     end
   end
