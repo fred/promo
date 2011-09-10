@@ -136,7 +136,7 @@
           Bring equality and fairness to all. The wars are creating more widows and orphans than all the natural disasters put together.
           <br />
           <br />
-          Enough is enough. If you love God, if you love human beings, say 'no to war and yes to peace' and become a follower -- a true follower -- of Jesus. A true follower of Gandhi. A true follower of Martin Luther King, of Nelson Mandela.
+          Enough is enough. If you love God, if you love human beings, say 'no to war and yes to peace' and become a follower -- a true follower -- of Jesus. A true follower of Gandhi, of Martin Luther King, of Nelson Mandela..
         </p>
       </div>
       <div id="last_box_right">
@@ -149,9 +149,14 @@
           </ul>
         </div>
         <div id="last_box_right2">
-          <p><a href="#">Donec luctus luctus faucibus.</a><br />
-            Mauris venenatis arcu vel urna imperdiet vitae malesuada urna aliquet. Morbi mi sapien, malesuada nec condimentum id, mattis eu lacus. Sed non dui vel ipsum </p>
-          <div class="read"> <a href="#">read more...</a> </div>
+          <p>
+            <a href="/pages/lybia">Why the war on Libya must stop.</a>
+            <br />
+            Dr K A Paul visited Libya to convince Libya's leader Muammar Qaddafi to relinquish power and allow for fresh elections to take place. He was successful in this mission: Mr Qaddafi as well as senior members in the government agreed and signed acceptance of his proposal. 
+            <br />
+            However, the U.S. State Department and the White House, shockingly rejected the initiative and chose instead to continue the failed attempts to kill Qaddafi and his son.
+            </p>
+          <div class="read"> <a href="/lybia">read more...</a> </div>
         </div>
         <div class="clear"></div>
       </div>
@@ -182,12 +187,10 @@
       <div id="footer_top_column3">
         <h3>Useful Resources</h3>
         <ul class="ls">
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Maecenas in turpis</a></li>
-            <li><a href="#">Morbi fringilla libero</a></li>
-            <li><a href="#">In venenatis metus vel</a></li>
-            <li><a href="#">Donec cursus quam ac</a></li>
-          </ul>
+          <% @pages.each do |page| %>
+            <li><%= link_to page.title, page %></li>
+          <% end %>
+        </ul>
       </div>
       <div id="footer_top_column4">
         <h3>About Us</h3>
