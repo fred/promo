@@ -1,0 +1,56 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2>Please check the following fields:</h2>
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => 40, :placeholder => "Let us know you Name", :required => "required" %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :type => "email", :size => 40, :placeholder => "Your contact email", :required => "required" %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, :type => "tel", :size => 40, :placeholder => "Your contact phone number" %>
+  </div>
+  <div class="field">
+    <%= f.label :body, "Message" %><br />
+    <%= f.text_area :body, :rows => 8, :cols => 40, :required => "required", :autofocus => "autofocus" %>
+  </div>
+  <div class="field">
+    <%= f.label :skype %><br />
+    <%= f.text_field :skype, :size => 40, :placeholder => "Skype allows live chat" %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter, :size => 40, :placeholder => "Do you have a twitter account" %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :urgent %>
+    <%= f.label :urgent, "Contact me Urgently" %>
+  </div>
+  
+  <br />
+  
+  <div class="field">
+    <p>Quick check to prove you are a human! (reload page to get a different question)</p>
+  <%= f.label :humanizer_answer, @message.humanizer_question %><br />
+  <%= f.text_field :humanizer_answer %>
+  <%= f.hidden_field :humanizer_question_id %>
+  </div>
+  
+  <br />
+  <div class="actions"> 
+    <%= f.submit "Send Message", :disable_with => "Sending...", :class => "submit_button" %>
+  </div>
+<% end %>

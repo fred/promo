@@ -1,0 +1,12 @@
+*~
+git
+*.log
+log/
+tmp/
+database.yml
+.DS_Store
+doc/*
+.rvmrc
+db/*.sql
+public/pages/
+public/*.html

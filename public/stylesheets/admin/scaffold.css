@@ -1,0 +1,62 @@
+/* @group Rails errors and flashes */
+
+#error_explanation,
+.alert,
+.notice {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  font-size: 1.1em;
+}
+.notice {
+  color: green;
+}
+.elert {
+  color: #D12F19;
+}
+#error_explanation p,
+#error_explanation li,
+#error_explanation h3 {
+  color: #D12F19;
+}
+
+#error_explanation h3 { margin: 5px 0 0 0; }
+
+#error_explanation ul { margin: 10px 0 0 20px!important; }
+
+#error_explanation,
+.alert { background: #FBE3E4; border-color: #FBC2C4; color: #D12F19; }
+.alert a { color: #D12F19; text-decoration: underline; }
+
+.notice { background: #FFF6BF; border-color: #FFD324; color: #817134; }
+.notice a { color: #817134; text-decoration: underline; }
+
+.field_with_errors {
+  display: inline;
+  font-weight:bold;
+}
+.field_with_errors label { 
+  color: #CD0A0A;
+}
+.field_with_errors input,
+.field_with_errors textarea
+ { 
+  background: #FEF8F6; 
+}
+
+#error_explanation ul { margin: 1em 1.5em; }
+#error_explanation ul li { list-style: square!important; margin: 0!important; color: #444;}
+
+/* @end */
+
+div.field, div.actions {
+  margin-bottom: 15px;
+}
+
+#notice {
+  color: green;
+}
+
+/*

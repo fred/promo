@@ -1,0 +1,30 @@
+
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h3>
+      <%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:
+      </h3>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <fieldset>
+    <legend>Image</legend>  
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :data, "Browse File" %>
+      <%= f.file_field :data %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  </fieldset>

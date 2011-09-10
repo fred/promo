@@ -1,0 +1,42 @@
+<div id="columnarForm">
+  
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>Please check the following fields:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+		<legend>User Information</legend>
+		<p>
+    	<%= f.label :name %> <br />
+    	<%= f.text_field :name %>
+    </p>
+    <p>
+    	<%= f.label :email %> <br />
+    	<%= f.text_field :email, :type => "email" %>
+    </p>
+    <p>
+    	<%= f.label :password %> <br />
+    	<%= f.password_field :password %>
+    </p>
+    <p>
+    	<%= f.label :password_confirmation %> <br />
+    	<%= f.password_field :password_confirmation %>
+    	<span class="small_tip">leave password blank to keep current password.</span>
+    </p>
+    <p>
+      <%= f.check_box :admin %>
+      <%= f.label :admin %>
+    </p>
+	</fieldset>
+
+    
+</div>
+
+<br clear="both"/>

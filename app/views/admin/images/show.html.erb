@@ -1,0 +1,35 @@
+<h3>
+  <%= @image.title %>
+</h3>
+
+<br />
+<h3>Image Versions:</h3>
+
+<%= image_tag @image.data(:mini) %>
+<p><%= @image.data(:mini) %></p>
+<br />
+
+<%= image_tag @image.data(:thumb) %>
+<p><%= @image.data(:thumb) %></p>
+<br />
+
+<%= image_tag @image.data(:small) %>
+<p><%= @image.data(:small) %></p>
+<br />
+
+<%= image_tag @image.data(:medium) %>
+<p><%= @image.data(:medium) %></p>
+<br />
+
+<%= image_tag @image.data(:large) %>
+<p><%= @image.data(:large) %></p>
+<br />
+
+<%= image_tag @image.data(:galery) %>
+<p><%= @image.data(:galery) %></p>
+<br />
+
+<p>
+<%= link_to 'Edit', edit_admin_image_path(@image) %> |
+<%= link_to 'Back', admin_images_path %>
+</p>

@@ -1,0 +1,46 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2>Please check the following fields:</h2>
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => 36 %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :type => "email", :size => 36 %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, :type => "email", :size => 36 %>
+  </div>
+  <div class="field">
+    <%= f.label :body, "Message" %><br />
+    <%= f.text_area :body, :rows => 8, :cols => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :skype %><br />
+    <%= f.text_field :skype, :size => 36 %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter, :size => 36 %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :urgent %>
+    <%= f.label :urgent, "Contact me Urgently" %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit "Send Message" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  phone_number: MyString
+  body: MyText
+  skype: MyString
+  twitter: MyString
+  unread: false
+  urgent: false
+
+two:
+  name: MyString
+  email: MyString
+  phone_number: MyString
+  body: MyText
+  skype: MyString
+  twitter: MyString
+  unread: false
+  urgent: false

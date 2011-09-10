@@ -1,0 +1,12 @@
+<h3> New User </h3>
+
+<% form_for(@user, :url => admin_users_path, :html => { :multipart => true }) do |f| %>
+  
+  <%= render :partial => 'form', :locals => { :f => f, :user => @user } %>
+
+  <p> <%= f.submit "Save" %></p>
+
+<% end %>
+
+<%= link_to image_tag("admin/back_button.png"), admin_users_path %>
+

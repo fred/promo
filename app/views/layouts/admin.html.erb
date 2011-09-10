@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= (@title || "Admin") %></title>
+    <%= stylesheet_link_tag 'admin/base' %>
+    <%= stylesheet_link_tag 'admin/admin' %>
+    <%= stylesheet_link_tag 'admin/menu' %>
+    <%= stylesheet_link_tag 'admin/scaffold' %>
+    <%= stylesheet_link_tag 'admin/side_menu' %>
+    <%= stylesheet_link_tag 'admin/forms' %>
+    <%= stylesheet_link_tag 'admin/typography' %>
+    <%= stylesheet_link_tag 'admin/table' %>
+    <%= stylesheet_link_tag 'admin/pagination' %>
+    <%= javascript_include_tag 'browser_detect' %>
+    <%= javascript_include_tag "application.js" %>  
+    <!-- jQuery -->
+    <%= javascript_include_tag "jquery.min.js" %>
+    <%= javascript_include_tag "jquery-ui.min.js" %>
+    <%= javascript_include_tag "jquery_ujs.js" %>
+    <%= stylesheet_link_tag "jquery-ui-1.8.13.custom.css" %>
+    <!-- Added for Rails 3.0 protect_from_forgery -->
+    <%= csrf_meta_tag %>
+    
+    <%= yield(:head) %>
+  </head>
+  <body>
+    
+    <div id="top-menu">
+      <div class="top-menu-left">
+        <%= link_to "Home", admin_path %>
+        &nbsp; <%= link_to "Website", root_path %>
+      </div>
+      <div class="top-menu-right">
+        <span class="loggedas"><%= "Logged as: #{current_user.name}" %> </span>        
+        <% if current_user %>
+          &nbsp; <%= link_to "My Account", edit_admin_user_path(current_user) %> |
+          &nbsp; <%= link_to "Logout", destroy_user_session_path, :confirm => "Are you sure" %>
+        <% end %>
+      </div>
+    </div>
+    
+    <div id="site">
+    
+      <h2 class="header_title">
+        Administration Interface <span class="version"> version 0.5 </span>
+      </h2>
+      
+      <!-- HEADER START -->
+      <div  id="header"> 
+        <div  id="dolphincontainer">
+          <div  id="dolphinnav">
+            <ul><%= link_to(image_tag("admin/home_icon.png", :class => "home_icon"), admin_path ) %>
+              <li><%= link_to "Home", admin_path, :class => is_current_menu("dashboard") %></li>
+              <li><%= link_to "Pages", admin_pages_path, :class => is_current_menu("pages") %></li>
+              <li><%= link_to "Images", admin_images_path, :class => is_current_menu("images") %></li>
+              <li><%= link_to "Messages", admin_messages_path, :class => is_current_menu("messages") %></li>
+              <li><%= link_to "Users", admin_users_path, :class => is_current_menu("users") %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- HEADER END -->
+        
+      <br class="clear"/>
+      
+      <!-- Main Content Starts Here -->
+      <div id="main">
+        
+        <div class="content">
+            <% if notice %>
+              <div class="notice"><%= notice %></div>
+            <% end %>
+            
+            <%= yield %>
+                      
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

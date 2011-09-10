@@ -1,0 +1,31 @@
+<% @title ||= "Messages" %>
+
+<table id="hor-minimalist-b">
+  <caption><%= @title %></caption>
+
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone number</th>
+    <th>IP</th>
+    <th>Urgent</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= link_to(message.name, admin_message_path(message)) %></td>
+    <td><%= mail_to h(message.email) %></td>
+    <td><%=h message.phone_number %></td>
+    <td><%= link_to(message.remote_ip, "http://www.geoiptool.com/en/?IP=#{message.remote_ip}", :target => "_blank") %></td>
+    <td><%=h message.urgent %></td>
+    <td><%=h message.created_at.to_s(:short) %></td>
+    <td><%= link_to 'Show', admin_message_path(message) %></td>
+    <td><%= link_to 'Del', admin_message_path(message), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

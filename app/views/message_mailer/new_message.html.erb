@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body{
+          width:auto;
+          font-family: 'Arial','Helvetica',sans-serif;
+          font-size:14px; 
+          color:#333;
+          }
+        #container{
+          min-height:400px;
+          margin: 10px;
+        }
+        header{
+          margin: 0px;
+          padding: 0px;
+        }
+        .message {
+          margin-top: 10px;
+          background-image: url("http://hotelmingood.com/images/themes/environmental_brand/bg.jpg");
+          background-repeat: repeat;
+          background-position: top;
+          border: 1px solid #D5D4CD;
+          padding: 5px;
+        }
+        p{
+          padding:2px;
+        }
+        p.small{
+          font-size:smaller;
+          color:#999;
+          font-style:italic;
+        }
+        a{
+          color:#107FC9;
+          font-weight:bold;
+        }
+        a:hover{
+          color: #22AAE0;
+        }
+        a:active{
+          color: #005D9C;
+        }
+        .large_text{
+          font-size:21px;
+          font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;
+        }
+        pre { 
+          margin: 1em 0.5em 0 1em;
+        	white-space: pre;
+        	line-height: 1.2;
+        	font: 1.1em Helvetica, Georgia, "DejaVu Sans Mono", "Bitstream Vera Mono", "Courier New", monospace;
+        	font-style: normal;
+        	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+          white-space: pre-wrap; /* css-3 */
+          white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+          white-space: -pre-wrap; /* Opera 4-6 */
+          white-space: -o-pre-wrap; /* Opera 7 */
+          /*width: 96%; */
+          word-wrap: break-word; /* Internet Explorer 5.5+ */
+        }
+        
+      /*]]>*/
+    </style>
+  </head>
+  <body>
+    <div id="container">
+    <header><h2>There is a new message left at Hotelmingood.com</h2></header>
+    <div class="message">
+      <p>From: <%=h @message.name %></p>
+      <p>Email: <%=h @message.email %></p>
+      <p>Phone: <%=h @message.phone_number %></p>
+      <p>
+        Skype: 
+        <% unless @message.skype.empty? %>
+          <%=h @message.skype %>
+          (<a href="skype:<%= h @message.skype %>?chat">chat</a> <a href="skype:<%= h @message.skype %>?call">call</a>)
+        <% end %>
+      </p>
+      <p>IP: <%= link_to(@message.remote_ip, "http://www.geoiptool.com/en/?IP=#{@message.remote_ip}", :target => "_blank") %></p>
+      <p>Date: <%=h @message.created_at.to_s(:short) %></p>
+      <p>Message: <pre><%=h @message.body %></pre></p>
+    </div>
+    <p>
+      To see full message details, just follow this link: <%= @url %>.
+    </p>
+    <p>Have a great day!</p>
+    </div>
+  </body>
+</html>

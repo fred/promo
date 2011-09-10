@@ -1,0 +1,93 @@
+<script type="text/javascript">
+$(document).ready(function() {
+  //comment...easy
+  $('#new_page_form input, #new_page_form textarea').bind('blur keyup',function() {
+    //comment
+    $('#lp-body').html($('#page_body').val());
+    $('#lp-body').html($('#lp-body').html());
+  });
+});
+</script>
+
+<div id="new_page_form">
+  
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="seo_fields">
+    <legend>Required</legend>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, :size => 60 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :permalink %><br />
+      <%= f.text_field :permalink, :size => 60 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :link_title %><br />
+      <%= f.text_field :link_title, :size => 60 %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :sort_order %><br />
+      <%= f.text_field :sort_order, :type => "number", :size => 10 %>
+    </div>
+  </fieldset>
+  
+  <br />
+  
+  <fieldset class="seo_fields">
+    <legend>SEO Fields</legend>
+    <div class="field">
+      <%= f.label :meta_title %><br />
+      <%= f.text_field :meta_title, :size => 88 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :meta_keywords %><br />
+      <%= f.text_field :meta_keywords, :size => 88 %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :meta_description %><br />
+      <%= f.text_area :meta_description, :rows => 4, :cols => 92 %>
+    </div>
+  </fieldset>
+  
+  <br />
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :rows => 26, :cols => 96 %>
+  </div>
+
+  <!-- <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  -->
+</div>
+
+<br />
+<p>Page Preview:</p>
+<br />
+<div id="live-preview-display" class="lp-block">
+  <div id="lp-body"></div>
+</div>
+<br />

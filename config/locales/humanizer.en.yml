@@ -1,0 +1,70 @@
+en:
+  humanizer:
+    validation:
+      error: You're not a human
+    questions:
+      - question: "Two plus four?"
+        answers: ["6", "six"]
+      - question: "Two plus two?"
+        answers: ["4", "four"]
+      - question: "Seven plus seven?"
+        answers: ["14", "fourteen"]
+      - question: "five plus five?"
+        answers: ["10", "ten"]
+      - question: "Jack and Jill went up the..."
+        answer: hill
+      - question: "What is the number before twelve?"
+        answers: ["11", "eleven"]
+      - question: Five times two is what?
+        answers: ["10", "ten"]
+      - question: "Insert the next number in this sequence: 10, 11, 12, 13, 14, .."
+        answers: ["15", "fifteen"]
+      - question: "Insert the next number in this sequence: 22, 24, 26, 28, .."
+        answers: ["30", "thirty"]
+      - question: "What is five times five?"
+        answers: ["25", "twenty-five"]
+      - question: "Ten divided by two is what?"
+        answers: ["5", "five"]
+      - question: What day comes after Monday?
+        answer: "tuesday"
+      - question: What is the last month of the year?
+        answer: "december"
+      - question: How many minutes are in an hour?
+        answers: ["60", "sixty"]
+      - question: What is the opposite of down?
+        answer: "up"
+      - question: What is the opposite of north?
+        answer: "south"
+      - question: What is the opposite of bad?
+        answer: "good"
+      - question: What is 4 times four?
+        answers: ["16", "sixteen"]
+      - question: What number comes after 20?
+        answers: ["21", "twenty-one"]
+      - question: What is the number after 68?
+        answers: ["69", "sixty-nine"]
+      - question: Which year comes after 2010?
+        answer: "2011"
+      - question: What month comes before August?
+        answer: "july"
+      - question: What month comes before July?
+        answer: "june"
+      - question: What month comes before June?
+        answer: "may"
+      - question: What month comes before May?
+        answer: "april"
+      - question: What month comes before April?
+        answer: "march"
+      - question: What is fifteen divided by three?
+        answer: ["five", "5"]
+      - question: What is 14 minus 4?
+        answers: ["10", "ten"]
+      - question: "What comes next? Sunday, Monday, Tuesday.."
+        answer: "Wednesday"  
+      - question: "What comes next? Monday, Tuesday, Wednesday.."
+        answer: "Thursday"
+      - question: "What comes next? Tuesday, Wednesday, Thursday.."
+        answer: "Friday"
+      - question: "What comes next? Wednesday, Thursday, Friday.."
+        answer: "Saturday"
+  

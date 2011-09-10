@@ -1,0 +1,15 @@
+<br clear="both"/>
+
+<h2><%= @page.title %></h2>
+
+<br clear="both"/>
+
+<%= @page.body.html_safe %>
+
+<br clear="both"/>
+
+<% if current_user %>
+  <%= link_to 'Edit', edit_admin_page_path(@page) %> |
+  <%= link_to 'Back', admin_pages_path %>
+<% end %>
+

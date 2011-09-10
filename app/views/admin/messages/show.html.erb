@@ -1,0 +1,26 @@
+<h3><%=h @message.created_at.to_s(:short) %></h3>
+
+<div class="message">
+  <p>From: <%=h @message.name %></p>
+  <p>Email: <%= mail_to h(@message.email) %></p>
+  <p>Phone: <%=h @message.phone_number %></p>
+  <p>
+    Skype: 
+    <% unless @message.skype.empty? %>
+      <%=h @message.skype %>
+      (<a href="skype:<%= h @message.skype %>?chat">chat</a> <a href="skype:<%= h @message.skype %>?call">call</a>)
+    <% end %>
+  </p>
+  <p>Twitter: <%=h @message.twitter %></p>
+  <p>Message: <pre class="message_body"><%=h @message.body %><pre></p>
+</div>
+
+<br />
+
+<h4>Other Info</h4>
+
+<div class="message">
+  <p>IP: <%= link_to(@message.remote_ip, "http://www.geoiptool.com/en/?IP=#{@message.remote_ip}", :target => "_blank") %></p>
+  <p>Browser: <%= @message.user_agent %></p>
+  <p><%= @message.extra %></p>
+</div>

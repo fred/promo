@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <title><%= site_meta_title %></title> 
+  <meta name="keywords" content="<%= site_meta_keywords %>" />
+  <meta name="description" content="<%= site_meta_description %>" />
+  <%= stylesheet_link_tag "/stylesheets/themes/environmental_brand/style.css" %>
+  <%= stylesheet_link_tag :all %>
+  <%= csrf_meta_tag %>
+  <%= include_tiny_mce_if_needed %>
+  <%= render :partial => "/shared/ga" %>
+  <%#= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" %>
+  <%= yield :head %>
+</head>
+<body>
+
+<div id="maincontainer">
+  <!--main div container starts here-->
+  
+  <div id="topcontainer">
+    
+    <!-- top container starts here-->
+    <div id="logocontainer">
+      <a href="/" title="Home Page">
+      <!-- logo container starts here-->
+      <h1>Hotel Mingood</h1>
+	    <h4>Penang, Malaysia</h4>
+	    </a>
+    <!-- logo container ends here-->
+    </div>
+    
+    <div id="navicontainer">
+      
+      <!-- navogation div starts here-->
+      <img src="/images/themes/environmental_brand/navi_left.jpg" alt="" />
+<div id="tabs1" >
+        <ul>
+          <!-- CSS Tabs -->
+          <li><a href="/explore" title="Explore the Hotel"><span>Explore Hotel</span></a></li>
+          <li><a href="/gettingthere2" title="Getting There"><span>Getting There</span></a></li>
+          <li><a href="/whattodoinpenang" title="About Penang"><span>Penang</span></a></li>
+          <li><a href="/rates" title="Rates"><span>Rates</span></a></li>
+          <li><a href="/messages/new" title="Rates"><span>Contact</span></a></li>
+        </ul>
+      </div>
+      <img src="/images/themes/environmental_brand/navi_right.jpg" alt="" />
+      <!-- navogation div ends here-->
+      
+    </div>
+    <!-- top container ends here-->
+  </div>
+  
+  <div id="bodycontainer">
+    
+    <!-- body div starts here-->
+    <div id="bannerbgcontainer">
+      
+      <!-- banner bg div starts here-->
+      <div class="lftcontainer">
+        
+        <div class="bannerleft">
+          <!-- banner left div starts here-->
+          <%= link_to image_tag("/images/mingood/free_wifi_64.png", 
+                :alt => "Free Wifi", 
+                :title => "Free High speed wifi on all rooms" 
+              ),
+              @wifi_page
+          %>
+          <p>
+            <%= link_to "Free Wifi", @wifi_page, :class=> "links", :title => "Free High speed wifi on all rooms" %>
+            High speed wifi on all rooms.
+          </p>
+          <!-- banner left div ends here-->
+        </div>
+        
+        <div class="bannerleft">
+          <!-- banner left div starts here-->
+          <%= link_to image_tag("/images/mingood/tv_64.png", 
+                :alt => "Free Cable TV", 
+                :title => "Cable TV: StarSports, ESPN, StarMovies and BBC World News" 
+              ),
+              @cable_tv_page
+          %>
+          <p>
+            <%= link_to "Cable TV", @cable_tv_page, :class=> "links", :title => "Cable TV: StarSports, ESPN, StarMovies and BBC World News" %>
+            StarSports, ESPN, StarMovies and BBC World News
+          </p>
+          <!-- banner left div ends here-->
+        </div>
+        
+        <div class="bannerleft">
+          <!-- banner left div starts here-->
+          <%= link_to image_tag("/images/mingood/greenglobelogo.jpg", 
+                :alt => "Green Globe Certified", 
+                :title => "Environmental Friendly, We care about the environment" 
+              ),
+              @green_globe_page
+          %>
+          <p>
+            <%= link_to "Environmental Friendly", @green_globe_page, :class=> "links", :title => "We care about the environment." %> 
+            We care about the environment. <br /> Green Hotel.
+          </p>
+          <!-- banner left div ends here-->
+        </div>
+        
+      </div>
+
+      <div id="banner">
+        <!-- banner div starts here-->
+        <img src="/images/mingood/penangicon-resized-full.jpg"  alt="" title=""/>
+        <!-- banner div ends here-->
+      </div>
+      
+      <p class="banner_subtitle">
+        Hotel Mingood offers you the heartbeat of Penang's historical George Town 
+        <br />
+        A UNESCO World Heritage Site
+      </p>
+      
+      <p class="banner_subtitle">
+        Tel: +604-229-9922 &nbsp; Fax: +604-228-0766 &nbsp; Email: sales@hotelmingood.com
+        <br />
+        GPS Position - Lat: N5.421829, Long: E100.330421 - 
+        <a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=hotel+mingood+penang&sll=1.46343,103.754715&sspn=0.595811,0.96405&ie=UTF8&hq=Mingood+Hotel&hnear=Mingood+Hotel,+Hotel+Mingood+164+Jalan+Argyll,+10050+Georgetown,+Malaysia&ll=5.429231,100.330496&spn=0.037083,0.060253&z=14&iwloc=A">
+          Map
+        </a>
+      </p>
+      <!-- banner bg div ends here-->
+    </div>
+    
+    
+    <div id="rightpanel">
+      <% if notice %>
+        <div class="notice"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+    
+      <div class="climate_image">  
+        <%= link_to image_tag("/images/mingood/Traveling-with-Climate-in-M-custom.gif", 
+              :alt => "Traveling with Climate in Mind", 
+              :title => "Traveling with Climate in Mind" 
+            ),
+            @green_globe_page
+        %>
+      </div>
+    </div>
+    <!-- Right div ends here-->
+    
+    
+    <div id="leftpanel">
+      
+      <div id="topimage">
+        Information 
+      </div>
+      
+      <div id="midcont">
+        <div id="vertmenu"> 
+          <ul>
+            <li><%= link_to "Explore The Hotel", "/explore", :title => "Explore The Hotel" %></li>
+            <li><%= link_to "Getting There", "/gettingthere2", :title => "Tips on getting to Hotel Mingood" %></li>
+            <li><%= link_to "What to Do in Penang", "/whattodoinpenang", :title => "What to Do in Penang" %></li>
+            <li><%= link_to "Thai Visa Information", "/hotelmingood-visainformation", :title => "Thai Visa Information" %></li>
+            <li><%= link_to "Hotel Rates", "/rates", :title => "Hotel Mingood Rates" %></li>
+            <li><%= link_to "Contact Us", new_message_path, :title => "Contact Us" %></li>
+          </ul>
+        </div>
+      </div>
+      <!-- left pannel div starts here-->
+      <div id="topimage">
+        Guests Testimonials 
+      </div>
+      
+      <div id="midcont">
+        <p class="review_title">Great value, nice breakfast, excellent service. Loved it!<p>
+        <p class="review_body">Clean and tidy hotel, very BIG rooms, makes it perfect for a long stay. Nice Breakfast, I was surprised about the quality of the breakfast. Staff is very helpful, speak perfect english, provides visa services and excellent exchange ratio. Free WIFI, very good and fast, wifi on every floor. </p>
+        <p class="review_date">May 11, 2010</p>
+        <p class="review_user">Fred_the_master, Bangkok, Thailand</p>
+      </div>
+
+      <div id="midcont">
+        <p class="review_title">Can't go wrong with this hotel, great value, excellent service</p>
+        <p class="review_body">My wife and I stayed last week at Hotel Mingood, after finding it on the Internet searching for Penang Budget Hotels. As a "budget hotel" I think that the service far exceeds any other budget hotel I've stayed at in Penang, and there have been quite a few! What stands out in particular are: * Staff helpfullness and friendliness *.
+        </p>
+        <p class="review_date">May 31, 2010</p>
+        <p class="review_user">Lusu30, Hat Yai, Thailand</p>
+      </div>
+      
+      <div id="midcont">
+        <p class="review_title">Great for price paid<p>
+        <p class="review_body">We stayed at Hotel Mingood for 3 nights and thought it was great value for money. The staff were very friendly and always tried to help us when they could. The rooms are basic but fine, they were always cleaned every day with new towels etc. every day. The TV had a news sports and movie channel which was good...
+        </p>
+        <p class="review_date">Apr 6, 2010</p>
+        <p class="review_user">adelle_k, United Kingdom</p>
+      </div>
+      
+      <%# if Rails.env == "production" %>
+      <div id="onload_flickr">
+        <%= render :partial => "/shared/flickr" %>
+      </div>
+      <div id="onload_weather">
+        <%= render :partial => "/shared/weather" %>
+      </div>
+      <%# end %>
+      <div id="leftfoot"><span>Exchange Rate</span>
+        <p>1 USD = 3.09 Malaysian Ringgits</p>
+      </div>
+      
+      <!-- left pannel div ends here-->
+    </div>
+    
+    
+  </div>
+  
+  <div id="footercontainer">
+    <!-- footer div starts here-->
+    <div id="foottop">
+      <p>
+        <%= link_to "Home", "/", :title => "Home" %>
+        <%= link_to "Explore The Hotel", "/explore", :title => "Explore The Hotel" %>
+        <%= link_to "Getting There", "/gettingthere2", :title => "Tips on getting to Hotel Mingood" %>
+        <%= link_to "What to Do in Penang", "/whattodoinpenang", :title => "What to Do in Penang" %>
+        <%= link_to "Thai Visa Information", "/hotelmingood-visainformation", :title => "Thai Visa Information" %>
+        <%= link_to "Hotel Rates", "/rates", :title => "Hotel Mingood Rates" %>
+        <%= link_to "Contact Us", new_message_path, :title => "Contact Us" %>
+        <%= link_to "Free Wifi", @wifi_page, :title => "Free Wifi" %>
+        <%= link_to "Cable TV", @cable_tv_page, :title => "Cable TV" %>
+        <%= link_to "Green", @green_globe_page, :title => "Environmental Friendly" %>
+      </p>
+    </div>
+    <!-- footer div ends here-->
+  </div>
+  
+  
+  <!--main div container ends here-->
+  
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+There is a new message left at Hotelmingood.com
+===============================================
+ 
+From: <%=h @message.name %>
+Email: <%=h @message.email %>
+Phone: <%=h @message.phone_number %>
+Skype: <%=h @message.skype %>
+IP: <%= @message.remote_ip %>
+Date: <%=h @message.created_at.to_s(:short) %>
+Message: <%=h @message.body %>
+
+To see full message details, just follow this link: <%= @url %>
+
+Have a great day!

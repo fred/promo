@@ -1,0 +1,12 @@
+<h3> <%= @title ||= "Editing #{@user.name.to_s}" %> </h3>
+
+<% form_for @user, :url => { :action => "update" }, :html => { :multipart => true } do |f| %>
+  
+  <%= render :partial => 'form', :locals => { :f => f, :user => @user } %>
+
+  <%= image_submit_tag "admin/save_button.png", :class => "button" %>
+  <%= link_to image_tag("admin/back_button.png"), admin_users_path %>
+
+<% end %>
+
+
