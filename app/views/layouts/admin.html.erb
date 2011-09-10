@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%= (@title || "Admin") %></title>
+    <title><%= yield :title %></title>
     <%= stylesheet_link_tag 'admin/base' %>
     <%= stylesheet_link_tag 'admin/admin' %>
     <%= stylesheet_link_tag 'admin/menu' %>
