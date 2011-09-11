@@ -28,6 +28,6 @@
       avatars: false,
       behavior: 'all'
     }
-  }).render().setUser("<%= @twitter_username.body %>").start();
+  }).render().setUser("<%= @twitter_username.body.to_s.chomp.lstrip.rstrip %>").start();
   </script>
 </div>
