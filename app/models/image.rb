@@ -6,7 +6,7 @@ class Image < ActiveRecord::Base
   
   has_attached_file :data,
     :styles => {
-      :galery => {:geometry => "640x640>", :quality => 92}, 
+      :galery => {:geometry => "800x800>", :quality => 92}, 
       :large => {:geometry => "360x360>", :quality => 92}, 
       :medium => {:geometry => "240x240>", :quality => 92}, 
       :small => {:geometry => "120x120>", :quality => 92}, 

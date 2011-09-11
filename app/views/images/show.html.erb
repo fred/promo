@@ -1,5 +1,6 @@
-<h3>
+<h1>
   <%= @image.title %>
-</h3>
+</h1>
 
-<%= image_tag @image.data(:galery) %>
+<%= image_tag @image.data(:galery), :alt => @image.title, :title => @image.title, :class => "with_shadow" %>
+<p><%= link_to "+ Download Original Size", @image.data.url(:original), :target => "_blank" %></p>

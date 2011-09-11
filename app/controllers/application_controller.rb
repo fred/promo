@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def home_page
     @home_page = Page.where(:permalink => "home").first
-    @pages = Page.all(:order => "sort_order ASC")
+    @pages = Page.where("type = 'Page'").all(:order => "sort_order ASC")
     
 
     @footer_left = Snippet.where(:permalink => "footer_left").first

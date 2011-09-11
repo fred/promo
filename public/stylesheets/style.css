@@ -180,8 +180,8 @@ padding: 0px 15px;
 }
 
 #content_body{
-margin: 10px;
-padding: 10px;
+  margin: 0 5px 0px 5px;
+  padding: 0 5px 0px 5px;
 }
 
 /*
@@ -219,7 +219,7 @@ column 3 box
 
 #column_box{
 background: url(/images/themes/freecss_solid/st_repeat.jpg) repeat-x top;
-margin: 15px 20px 0px 16px;
+margin: 12px 20px 0px 16px;
 }
 
 #column_box p{
@@ -439,7 +439,7 @@ scroll styles here
 .scrollable .items div { float:left;} 
 .scrollable .items .item { overflow:hidden;}
 .scrollable .items .item p { line-height:16px;}
-.navi { width:auto; height:20px;  margin: 15px 0; padding-left: 460px;} 
+.navi { width:auto; height:10px;  margin: 5px 0 0 0; padding-left: 460px;} 
 .navi a { width: 24px; cursor:pointer; height: 22px; float:left; margin:0 0 0 3px; background:url(/images/themes/freecss_solid/prew_img_button.png) no-repeat scroll top; display:block; font-size:1px;} 
 .navi a:hover, .navi a.active { background-position:left top; margin:0 0 0 3px;  background:url(/images/themes/freecss_solid/prew_img_button_hover.png) no-repeat scroll top}
 
@@ -475,7 +475,7 @@ div.pp_pic_holder {display: none;position: absolute;width: 100px;z-index: 10000;
 
 .image_item {
   padding: 4px;
-  margin: 4px;
+  margin: 5px 10px 10px 0px;
   display: inline;
   clear: none;
 
@@ -488,7 +488,16 @@ div.pp_pic_holder {display: none;position: absolute;width: 100px;z-index: 10000;
   box-shadow: 2px 2px 12px #888;
 }
 .image_item_full {
-  margin: 5px;
+  margin: 5px 10px 10px 0px;
   padding: 2px;
   border:2px solid #999;
+}
+
+img.with_shadow {
+  margin: 10px 10px 10px 0;
+  padding: 2px;
+  border: 2px solid #999;
+  -webkit-box-shadow: 2px 2px 12px #888;
+  -moz-box-shadow: 2px 2px 12px #888;
+  box-shadow: 2px 2px 12px #888;
 }

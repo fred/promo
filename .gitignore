@@ -10,3 +10,4 @@ doc/*
 db/*.sql
 public/pages/
 public/*.html
+public/system/
