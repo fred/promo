@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def home_page
     @home_page = Page.where(:permalink => "home").first
     @pages = Page.where("type = 'Page'").all(:order => "sort_order ASC")
+    @news_page = Page.where(:permalink => "news").first
     
     @logo = Snippet.where(:permalink => "logo").first
     @footer_left = Snippet.where(:permalink => "footer_left").first

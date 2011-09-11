@@ -501,6 +501,7 @@ div.pp_pic_holder {display: none;position: absolute;width: 100px;z-index: 10000;
   -webkit-box-shadow: 2px 2px 12px #888;
   -moz-box-shadow: 2px 2px 12px #888;
   box-shadow: 2px 2px 12px #888;
+  margin-bottom: 15px;
 }
 .image_item_full {
   margin: 5px 10px 10px 0px;
