@@ -106,7 +106,7 @@ float: left;
 }
 
 #logo h1 a{
-  font: 14px Arial, Helvetica, sans-serif;
+  font: 18px Arial, Helvetica, sans-serif;
   color: #000000;
   font-weight: bold;
   text-decoration: none;
@@ -270,8 +270,15 @@ font-size: 11px;
 }
 
 #last_box_left img{
-float: left;
-padding: 0px 10px 5px 0px;
+  float: left;
+  padding: 0px;
+  box-shadow: 1px 1px 10px #999;
+  -moz-box-shadow: 1px 1px 10px #999;
+  -webkit-box-shadow: 1px 1px 10px #999;
+  border-radius: 23px;
+  -moz-border-radius: 23px;
+  -webkit-border-radius: 23px;
+  margin: 0 20px 0 0;
 }
 
 #last_box_right{
@@ -434,7 +441,15 @@ scroll styles here
 .item img {float:left;}
 .item h2 { border:none; margin-bottom:15px;}
 
-.scrollable { position:relative; overflow:hidden; width: 966px; height: 304px;} 
+.scrollable { 
+  position:relative; 
+  overflow:hidden; 
+  width: 966px; 
+  height: 304px;
+  -webkit-box-shadow: 2px 2px 12px #666;
+  -moz-box-shadow: 2px 2px 12px #666;
+  box-shadow: 2px 2px 12px #666;
+}
 .scrollable .items { width:20000em; position:absolute;}
 .scrollable .items div { float:left;} 
 .scrollable .items .item { overflow:hidden;}
@@ -500,4 +515,9 @@ img.with_shadow {
   -webkit-box-shadow: 2px 2px 12px #888;
   -moz-box-shadow: 2px 2px 12px #888;
   box-shadow: 2px 2px 12px #888;
+}
+img.shadow {
+  -webkit-box-shadow: 2px 2px 12px #999;
+  -moz-box-shadow: 2px 2px 12px #999;
+  box-shadow: 2px 2px 12px #999;
 }

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @home_page = Page.where(:permalink => "home").first
     @pages = Page.where("type = 'Page'").all(:order => "sort_order ASC")
     
-
+    @logo = Snippet.where(:permalink => "logo").first
     @footer_left = Snippet.where(:permalink => "footer_left").first
     @twitter_username = Snippet.where(:permalink => "twitter_username").first
     @footer_copyright = Snippet.where(:permalink => "footer_copyright").first
