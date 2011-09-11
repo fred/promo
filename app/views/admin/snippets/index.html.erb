@@ -1,0 +1,24 @@
+<% @title ||= "Snippets" %>
+
+<table id="hor-minimalist-b">
+  <caption><%= @title %></caption>
+  <tr>
+    <th>Title</th>
+    <th>Code</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @snippets.each do |snippet| %>
+  <tr>
+    <td><%= link_to snippet.title, admin_snippet_path(snippet) %></td>
+    <td><%= link_to snippet.permalink, admin_snippet_path(snippet) %></td>
+    <td><%= link_to 'Edit', edit_admin_snippet_path(snippet) %></td>
+    <td><%= link_to 'Del', admin_snippet_path(snippet), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Snippet', new_admin_snippet_path %>

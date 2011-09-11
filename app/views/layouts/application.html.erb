@@ -103,42 +103,12 @@
     
     <div id="column_box">
       <div id="bg_left"></div>
-      <div id="column1">
-        <h2><a href="/pages/though_shalt_not_kill">Though Shalt Not Kill</a></h2>
-        <p>Don't kill Mr Qaddafi, when he has agreed to relinquish the power, and bring stability to the nation; consider his proposal for the sake of Libyans and to avoid future genocide or civil war among the tribes.</p>
-        <div class="read"> <a href="/pages/though_shalt_not_kill">read more...</a> </div>
-      </div>
-      <div id="column2">
-        <h2><a href="/pages/stop_the_bombing">Stop the bombing</a></h2>
-        <p>
-          UN Security Council resolutions on Libya which expire on September 20, must not be extended. 
-          <br />
-          The resolutions stipulated only a no-fly zone, not the bombing of civilians, and not NATO ground troops in Libya.
-        </p>
-        <div class="read"> <a href="/pages/do_not_extend_nato_bombing">read more...</a> </div>
-      </div>
-      <div id="column3">
-        <h2> <a href="/pages/change_foreign_policy">Change foreign policy</a></h2>
-        <p>
-          The U.S. and Europe should change their unjust foreign policy and restore its image to what it was before the Iraq war and not waste hundreds of billions of dollars in unnecessary wars such as the current war on Libya.
-        </p>
-        <div class="read"> <a href="/pages/change_foreign_policy">read more...</a> </div>
-      </div>
-      <div id="bg_right"></div>
-      <div class="clear"></div>
+      <%= @box_center.body.html_safe %>
     </div>
     
     <div id="last_box">
       <div id="last_box_left">
-        <h4>Be ONE in a MILLION and give peace a chance</h4>
-        <img src="/images/themes/freecss_solid/img1.jpg" alt="" title="" />
-        <p>
-          Bring equality and fairness to all. The wars are creating more widows and orphans than all the natural disasters put together.
-          <br />
-          Enough is enough. If you love God, if you love human beings, say 'no to war and yes to peace' and become a follower -- a true follower -- of Jesus. A true follower of Gandhi, of Martin Luther King, of Nelson Mandela.
-          <br /><br />
-          Take one or more of the Email, Facebook, Twitter or RSS actions under "Follow Us" below, to be counted as ONE in a MILLION:
-        </p>
+        <%= @last_box_left.body.html_safe %>
       </div>
       <div id="last_box_right">
         <h4>Pages List </h4>
@@ -150,39 +120,28 @@
           </ul>
         </div>
         <div id="last_box_right2">
-          <p>
-            <a href="/pages/libya">Why the war on Libya must stop.</a>
-            <br />
-            Dr K A Paul visited Libya to convince Libya's leader Muammar Qaddafi to relinquish power and allow for fresh elections to take place. 
-            <br />
-            Find out what happened:
-            </p>
-          <div class="read"> <a href="/pages/libya">read more...</a> </div>
+          <%= @last_box_right.body.html_safe %>
         </div>
         <div class="clear"></div>
       </div>
       <div class="clear"></div>
     </div>
   </div>
+  
   <div class="content_bot"></div>
   <div id="footer_bg">
     <div id="footer_top">
       <div id="footer_top_column1">
-        <h3><span style="text-decoration:blink;">Follow Us</span></h3>
-        <div class="foot_pad">
-          <div class="link2"><a href="#">Be a fan on Facebook</a></div>
-          <div class="link3"><a href="#">RSS Feed</a></div>
-          <div class="link4"><a href="#">Follow us on Twitter</a></div>
-        </div>
+        <%= @footer_left.body.html_safe %>
       </div>
       <div id="footer_top_column2">
         <%= render :partial => "/shared/twitter" %>
       </div>
-
       <div class="clear"></div>
     </div>
     <div id="footer_bot">
-      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+      <!-- Footer -->
+      <%= @footer_copyright.body.html_safe %>
     </div>
   </div>
 </div>

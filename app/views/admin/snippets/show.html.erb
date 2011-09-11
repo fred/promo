@@ -1,0 +1,24 @@
+<br clear="both"/>
+
+<% title @snippet.title %>
+
+<h2><%= @snippet.title %></h2>
+
+<br clear="both"/>
+
+<h3>Code:</h3>
+<pre><%= @snippet.body %></pre>
+
+
+<br clear="both"/>
+
+<h3>Preview:</h3>
+<%= @snippet.body.html_safe %>
+
+<br clear="both"/>
+
+<% if current_user %>
+  <%= link_to 'Edit', edit_admin_snippet_path(@snippet) %> |
+  <%= link_to 'Back', admin_snippets_path %>
+<% end %>
+

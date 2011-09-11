@@ -46,8 +46,7 @@ $(document).ready(function() {
     </div>
   </fieldset>
   
-  <br />
-  
+
   <fieldset class="seo_fields">
     <legend>SEO Fields</legend>
     <div class="field">
@@ -65,12 +64,11 @@ $(document).ready(function() {
       <%= f.text_area :meta_description, :rows => 4, :cols => 92 %>
     </div>
   </fieldset>
-  
-  <br />
+
   
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body, :rows => 26, :cols => 96 %>
+    <%= f.text_area :body, :rows => 22, :cols => 96 %>
   </div>
 
   <!-- <div class="field">
@@ -84,10 +82,9 @@ $(document).ready(function() {
   -->
 </div>
 
-<br />
-<p>Page Preview:</p>
-<br />
+<p>Preview:</p>
 <div id="live-preview-display" class="lp-block">
   <div id="lp-body"></div>
 </div>
+<p><em>* It may show different on front end website *</em></p>
 <br />

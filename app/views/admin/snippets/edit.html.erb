@@ -1,0 +1,8 @@
+<h1>Editing snippet</h1>
+
+<%= form_for(@snippet, :url => { :action => "update" }, :html => { :multipart => true }) do |f| %>
+  <%= render 'form', :f => f %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

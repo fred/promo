@@ -1,0 +1,52 @@
+<script type="text/javascript">
+$(document).ready(function() {
+  //comment...easy
+  $('#new_snippet_form input, #new_snippet_form textarea').bind('blur keyup',function() {
+    //comment
+    $('#lp-body').html($('#snippet_body').val());
+    $('#lp-body').html($('#lp-body').html());
+  });
+});
+</script>
+
+<div id="new_snippet_form">
+  
+  <% if @snippet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@snippet.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @snippet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="seo_fields">
+    <legend>Required</legend>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, :size => 60 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :permalink, "Snippet Code" %><br />
+      <%= f.text_field :permalink, :size => 60 %>
+    </div>
+
+  </fieldset>
+
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :rows => 22, :cols => 96 %>
+  </div>
+
+</div>
+
+<p>Snippet Preview:</p>
+<div id="live-preview-display" class="lp-block">
+  <div id="lp-body"></div>
+</div>
+<br />

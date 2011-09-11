@@ -1,4 +1,5 @@
 Mingood::Application.routes.draw do
+  resources :snippets
   resources :messages
   resources :images
   resources :pages
@@ -9,6 +10,7 @@ Mingood::Application.routes.draw do
     resources :users
     resources :messages
     resources :images
+    resources :snippets
   end
     
   # Admin home page
