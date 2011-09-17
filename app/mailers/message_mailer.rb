@@ -1,10 +1,10 @@
 class MessageMailer < ActionMailer::Base
-  default :from => "root@host.com"
+  default :from => "root@globalpeacenow.com"
   
   def new_message(message)
     @message = message
-    @url  = "http://host.com/admin/messages"
+    @url  = "http://globalpeacenow.com/admin/messages"
     mail(:to => "admin@heyu.net",
-         :subject => "New Message at host.com")
+         :subject => "New Message at globalpeacenow.com")
   end
 end

@@ -12,7 +12,6 @@
     <th>Date</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @messages.each do |message| %>
@@ -22,8 +21,7 @@
     <td><%=h message.phone_number %></td>
     <td><%= link_to(message.remote_ip, "http://www.geoiptool.com/en/?IP=#{message.remote_ip}", :target => "_blank") %></td>
     <td><%=h message.urgent %></td>
-    <td><%=h message.created_at.to_s(:short) %></td>
-    <td><%= link_to 'Show', admin_message_path(message) %></td>
+    <td><%= link_to message.created_at.to_s(:long), admin_message_path(message) %></td>
     <td><%= link_to 'Del', admin_message_path(message), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
