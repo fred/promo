@@ -15,21 +15,26 @@
 
 <table cellspacing="0" >
   <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone number</th>
-    <th>IP</th>
-    <th>Date</th>
+    <th><%= sort_link @search, :id %></th>
+    <th><%= sort_link @search, :name %></th>
+    <th><%= sort_link @search, :email %></th>
+    <th><%= sort_link @search, :phone_number %></th>
+    <th><%= sort_link @search, :remote_ip, "IP" %></th>
+    <th><%= sort_link @search, :created_at, "Date" %></th>
     <th></th>
   </tr>
 
 <% @messages.each do |message| %>
   <tr class="urgent_<%=message.urgent%> unread_<%=message.unread%>">
+    <td><%= message.id %></td>
     <td><%= link_to(message.name, admin_message_path(message)) %></td>
     <td><%= mail_to h(message.email) %></td>
     <td><%=h message.phone_number %></td>
     <td><%= link_to(message.remote_ip, "http://www.geoiptool.com/en/?IP=#{message.remote_ip}", :target => "_blank") %></td>
-    <td><%= link_to message.created_at.to_s(:short), admin_message_path(message) %></td>
+    <td>
+      <%= time_ago_in_words(message.created_at) %> ago 
+      (<%= message.created_at.to_s(:short) %>)
+    </td>
     <td><%= link_to 'Delete', admin_message_path(message), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -49,6 +54,6 @@
 <p>
   <span class="unread_true">Messages in Bold: Unread</span>
   <br />
-  <span class="urgent_true">Messages in Red: Urgent</span>
+  <span class="urgent_true">Messages in Light Blue: Urgent</span>
 </p>
   

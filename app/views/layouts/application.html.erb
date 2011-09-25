@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "table.css" %>
   <%= stylesheet_link_tag "scaffold.css" %>
-  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "jquery-1.6.4.min.js" %>
   <%= javascript_include_tag "jquery.tools.js" %>
   <%= csrf_meta_tag %>
   <%= yield :head %>
@@ -38,8 +38,7 @@
   
   <div id="content">
     <div id="prew_box">
-	
-      <div class="scrollable">
+      <div class="scrollable" id="scroller">
 				<div class="items">
 				  
 					<div class="item">

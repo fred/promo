@@ -15,15 +15,15 @@
 
 <table cellspacing="0" >
   <tr>
-    <th>ID</th>
-    <th>Order</th>
-    <th>Title</th>
-    <th>Permalink</th>
+    <th><%= sort_link @search, :id %></th>
+    <th><%= sort_link @search, :sort_order, "Order" %></th>
+    <th><%= sort_link @search, :title %></th>
+    <th><%= sort_link @search, :permalink %></th>
     <th>Link Title</th>
     <th>Meta Title</th>
     <th>Meta Keywords</th>
-    <th>Meta Description</th>
-    <th>Updated</th>
+    <th width="120px">Meta Description</th>
+    <th width="120px"><%= sort_link @search, :updated_at, "Last Update" %></th>
     <th></th>
     <th></th>
   </tr>
@@ -38,7 +38,7 @@
     <td><%= page.meta_title %></td>
     <td><%= page.meta_keywords %></td>
     <td><%= page.meta_description %></td>
-    <td><%= page.updated_at.to_s(:short) %></td>
+    <td><%= time_ago_in_words(page.updated_at) %> ago<br /><span class="info"><%= page.updated_at.to_s(:short) %></span></td>
     <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
     <td><%= link_to 'Del', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

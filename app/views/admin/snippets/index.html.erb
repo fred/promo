@@ -17,7 +17,7 @@
   <tr>
     <th>Title</th>
     <th>Code</th>
-    <th>Updated</th>
+    <th>Last Update</th>
     <th></th>
     <th></th>
   </tr>
@@ -26,7 +26,7 @@
   <tr>
     <td><%= link_to snippet.title, admin_snippet_path(snippet) %></td>
     <td><%= link_to snippet.permalink, admin_snippet_path(snippet) %></td>
-    <td><%= snippet.updated_at.to_s(:short) %></td>
+    <td><%= time_ago_in_words(snippet.updated_at) %> ago | <span class="info"><%= snippet.updated_at.to_s(:short) %></span></td>
     <td><%= link_to 'Edit', edit_admin_snippet_path(snippet) %></td>
     <td><%= link_to 'Del', admin_snippet_path(snippet), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
