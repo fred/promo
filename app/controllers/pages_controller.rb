@@ -19,6 +19,10 @@ class PagesController < ApplicationController
     # @page = Page.where(:permalink => params[:id]).first
     @page = @home_page if @page.nil?
     
+    @meta_title = @page.meta_title
+    @meta_keywords = @page.meta_keywords
+    @meta_description = @page.meta_description
+    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @page }

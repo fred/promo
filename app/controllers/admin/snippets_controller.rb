@@ -3,7 +3,10 @@ class Admin::SnippetsController < Admin::BaseController
   # GET /snippets
   # GET /snippets.xml
   def index
-    @snippets = Snippet.all
+    @per_page = 20
+    @search = Snippet.search(params[:search])
+    @snippets = @search.order(:title).paginate(:page => params[:page], :per_page => @per_page)
+    @title = "Pages Directory"
 
     respond_to do |format|
       format.html # index.html.erb

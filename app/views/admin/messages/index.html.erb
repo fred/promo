@@ -1,29 +1,54 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+      $(function() {
+        /* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+        /* For cell text alignment */
+        $("table td:first-child, table th:first-child").addClass("first");
+        /* For removing the last border */
+        $("table td:last-child, table th:last-child").addClass("last");
+      });
+  });
+</script>
+
 <% @title ||= "Messages" %>
 
-<table id="hor-minimalist-b">
-  <caption><%= @title %></caption>
-
+<table cellspacing="0" >
   <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Phone number</th>
     <th>IP</th>
-    <th>Urgent</th>
     <th>Date</th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @messages.each do |message| %>
-  <tr>
+  <tr class="urgent_<%=message.urgent%> unread_<%=message.unread%>">
     <td><%= link_to(message.name, admin_message_path(message)) %></td>
     <td><%= mail_to h(message.email) %></td>
     <td><%=h message.phone_number %></td>
     <td><%= link_to(message.remote_ip, "http://www.geoiptool.com/en/?IP=#{message.remote_ip}", :target => "_blank") %></td>
-    <td><%=h message.urgent %></td>
-    <td><%= link_to message.created_at.to_s(:long), admin_message_path(message) %></td>
-    <td><%= link_to 'Del', admin_message_path(message), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to message.created_at.to_s(:short), admin_message_path(message) %></td>
+    <td><%= link_to 'Delete', admin_message_path(message), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
+<br />
+
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @messages %>
+  </div>
+  <%= will_paginate @messages, :container => false %>
+</div>
+
+<br />
+
+<p>
+  <span class="unread_true">Messages in Bold: Unread</span>
+  <br />
+  <span class="urgent_true">Messages in Red: Urgent</span>
+</p>
+  

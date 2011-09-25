@@ -14,10 +14,12 @@ gem 'capistrano'
 
 gem 'paperclip'
 
+gem 'meta_search'
+
 # Custom gems
 gem 'tiny_mce'
 gem 'devise'
-gem 'will_paginate', '3.0.pre2'
+gem 'will_paginate', '~> 3.0'
 
 # gem 'memcache-client', :require => 'memcache'
 gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions'

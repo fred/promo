@@ -522,3 +522,11 @@ img.shadow {
   -moz-box-shadow: 2px 2px 12px #999;
   box-shadow: 2px 2px 12px #999;
 }
+
+
+ul li { list-style-position: inside; margin: 6px 2px;} 
+ol li { list-style-position: inside; margin: 6px 2px;}
+
+
+form label {font-size: 1.2em; font-weight:bold;}
+form p.captcha {font-size: 1.2em; margin-bottom: 10px;color:#B02B2C;}

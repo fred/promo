@@ -1,4 +1,4 @@
-class Snippet < Page
+class Snippet < Item
   
   def to_param
     permalink.parameterize

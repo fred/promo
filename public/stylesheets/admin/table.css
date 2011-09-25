@@ -159,7 +159,7 @@ body table {
 	padding: 8px;
 	color: #669;
 }
-#hor-zebra .odd {
+#hor-zebra .odd-row {
 	background: #e8edff; 
 }
 
@@ -546,12 +546,15 @@ caption {
 	padding:2px;
 	font-style: italic;
 }
-tr.unread td {
-	font-size:1.1em !important;
+tr.unread_true td {
 	text-decoration: underline !important;
 	font-weight: bold !important;
 }
-tr.unread td a {
+tr.unread_true td a {
 	text-decoration: underline !important;
 	font-weight: bold !important;
+}
+
+tr.urgent_true td a {
+  color: #B02B2C;
 }

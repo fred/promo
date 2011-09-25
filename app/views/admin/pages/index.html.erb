@@ -1,8 +1,21 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+      $(function() {
+        /* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+        /* For cell text alignment */
+        $("table td:first-child, table th:first-child").addClass("first");
+        /* For removing the last border */
+        $("table td:last-child, table th:last-child").addClass("last");
+      });
+  });
+</script>
+
 <% @title ||= "Pages" %>
 
-<table id="hor-minimalist-b">
-  <caption><%= @title %></caption>
+<table cellspacing="0" >
   <tr>
+    <th>ID</th>
     <th>Order</th>
     <th>Title</th>
     <th>Permalink</th>
@@ -10,13 +23,14 @@
     <th>Meta Title</th>
     <th>Meta Keywords</th>
     <th>Meta Description</th>
-    <th></th>
+    <th>Updated</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @pages.each do |page| %>
   <tr>
+    <td><%= link_to page.id, admin_page_path(page) %></td>
     <td><%= page.sort_order %></td>
     <td><%= page.title %></td>
     <td><%= link_to page.permalink, admin_page_path(page) %></td>
@@ -24,7 +38,7 @@
     <td><%= page.meta_title %></td>
     <td><%= page.meta_keywords %></td>
     <td><%= page.meta_description %></td>
-    
+    <td><%= page.updated_at.to_s(:short) %></td>
     <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
     <td><%= link_to 'Del', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -32,5 +46,12 @@
 </table>
 
 <br />
+<p><%= link_to 'New Page', new_admin_page_path %></p>
+<br />
 
-<%= link_to 'New Page', new_admin_page_path %>
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @pages %>
+  </div>
+  <%= will_paginate @pages, :container => false %>
+</div>

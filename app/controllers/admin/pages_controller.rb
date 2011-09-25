@@ -10,7 +10,10 @@ class Admin::PagesController < Admin::BaseController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    @per_page = 20
+    @search = Page.search(params[:search])
+    @pages = @search.order(:sort_order).paginate(:page => params[:page], :per_page => @per_page)
+    @title = "Pages Directory"
 
     respond_to do |format|
       format.html # index.html.erb

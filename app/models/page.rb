@@ -1,11 +1,5 @@
-class Page < ActiveRecord::Base
+class Page < Item
   
-  versioned
-  
-  validates_presence_of :title, :permalink, :body
-  
-  validates_uniqueness_of :title, :permalink
-
   def to_param
     permalink.parameterize
   end

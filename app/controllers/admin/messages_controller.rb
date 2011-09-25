@@ -4,17 +4,26 @@ class Admin::MessagesController < Admin::BaseController
   # GET /messages
   # GET /messages.xml
   def index
-    @messages = Message.order("created_at DESC").all.paginate(:page => params[:page], :per_page => 50)
+    @per_page = 10
+    @search = Message.search(params[:search])
+    @messages = @search.order("id DESC").paginate(:page => params[:page], :per_page => @per_page)
+    @title = "Messages Directory"
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @messages }
+    end
   end
+
 
   # GET /messages/1
   # GET /messages/1.xml
   def show
     @message = Message.find(params[:id])
     # # udpate unread message to read
-    # if !@message.unre
-    #   @message.update_attributes(:message_read => true)
-    # end
+    if @message.unread
+      @message.update_attributes(:unread => false)
+    end
   end
 
   # GET /messages/new

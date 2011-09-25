@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110910151014) do
+ActiveRecord::Schema.define(:version => 20110925102005) do
 
   create_table "images", :force => true do |t|
     t.string   "data_file_name"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(:version => 20110910151014) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "body"
+    t.string   "type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "link_title"
+    t.string   "meta_title"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.boolean  "locked",                        :default => true
+    t.integer  "sort_order",       :limit => 2, :default => 10
   end
 
   create_table "messages", :force => true do |t|
@@ -40,22 +56,6 @@ ActiveRecord::Schema.define(:version => 20110910151014) do
     t.string   "referrer"
     t.string   "remote_ip"
     t.string   "extra"
-  end
-
-  create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.string   "permalink"
-    t.text     "body"
-    t.string   "type"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "link_title"
-    t.string   "meta_title"
-    t.string   "meta_keywords"
-    t.string   "meta_description"
-    t.boolean  "locked",                        :default => true
-    t.integer  "sort_order",       :limit => 2, :default => 10
   end
 
   create_table "users", :force => true do |t|

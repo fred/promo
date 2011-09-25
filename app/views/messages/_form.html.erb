@@ -12,27 +12,27 @@
   
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, :size => 40, :placeholder => "Let us know you Name", :required => "required" %>
+    <%= f.text_field :name, :size => 36, :placeholder => "Let us know you Name", :required => "required" %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email, :type => "email", :size => 40, :placeholder => "Your contact email", :required => "required" %>
+    <%= f.text_field :email, :type => "email", :size => 36, :placeholder => "Your contact email", :required => "required" %>
   </div>
   <div class="field">
     <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number, :type => "tel", :size => 40, :placeholder => "Your contact phone number" %>
+    <%= f.text_field :phone_number, :type => "tel", :size => 36, :placeholder => "Your contact phone number" %>
   </div>
   <div class="field">
     <%= f.label :body, "Message" %><br />
-    <%= f.text_area :body, :rows => 8, :cols => 40, :required => "required", :autofocus => "autofocus" %>
+    <%= f.text_area :body, :rows => 8, :cols => 32, :required => "required", :autofocus => "autofocus" %>
   </div>
   <div class="field">
     <%= f.label :skype %><br />
-    <%= f.text_field :skype, :size => 40, :placeholder => "Skype allows live chat" %>
+    <%= f.text_field :skype, :size => 36, :placeholder => "Skype allows live chat" %>
   </div>
   <div class="field">
     <%= f.label :twitter %><br />
-    <%= f.text_field :twitter, :size => 40, :placeholder => "Do you have a twitter account" %>
+    <%= f.text_field :twitter, :size => 36, :placeholder => "Do you have a twitter account?" %>
   </div>
 
   <div class="field">
@@ -43,10 +43,10 @@
   <br />
   
   <div class="field">
-    <p>Quick check to prove you are a human! (reload page to get a different question)</p>
-  <%= f.label :humanizer_answer, @message.humanizer_question %><br />
-  <%= f.text_field :humanizer_answer %>
-  <%= f.hidden_field :humanizer_question_id %>
+    <p class="captcha">Quick check to prove you are a human! (reload page to get a different question)</p>
+    <%= f.label :humanizer_answer, @message.humanizer_question %><br />
+    <%= f.text_field :humanizer_answer %>
+    <%= f.hidden_field :humanizer_question_id %>
   </div>
   
   <br />
