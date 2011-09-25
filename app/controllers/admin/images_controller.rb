@@ -4,7 +4,6 @@ class Admin::ImagesController < Admin::BaseController
   # GET /images
   # GET /images.xml
   def index
-    @per_page = 10
     @search = Image.search(params[:search])
     @images = @search.order("id DESC").paginate(:page => params[:page], :per_page => @per_page)
     @title = "Images Directory"

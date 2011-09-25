@@ -14,7 +14,7 @@ class Admin::BaseController < ApplicationController
     if session[:per_page]
       @per_page = session[:per_page]
     else
-      @per_page = 25 # Default to 25
+      @per_page = 20 # Default to 20
     end
     
     if params[:per_page]

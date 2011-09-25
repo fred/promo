@@ -4,7 +4,6 @@ class Admin::MessagesController < Admin::BaseController
   # GET /messages
   # GET /messages.xml
   def index
-    @per_page = 10
     @search = Message.search(params[:search])
     @messages = @search.order("id DESC").paginate(:page => params[:page], :per_page => @per_page)
     @title = "Messages Directory"
