@@ -25,6 +25,18 @@
       <%= f.file_field :data %>
     </p>
     <p>
+      <%= f.check_box :gallery %>
+      <%= f.label :gallery, "Show in Image Gallery" %>
+    </p>
+    <p>
+      <%= f.check_box :featured %>
+      <%= f.label :featured, "Show in Home Page" %>
+    </p>
+    <p>
+      <%= f.check_box :published %>
+      <%= f.label :published, "Visible to Public" %>
+    </p>    
+    <p>
       <%= f.submit %>
     </p>
   </fieldset>

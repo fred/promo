@@ -1,6 +1,8 @@
 class Image < ActiveRecord::Base
   
-  # scope :published, where(:published => true)
+  scope :gallery, where(:gallery => true)
+  scope :featured, where(:featured => true)
+  scope :published, where(:published => true)
   
   belongs_to :page, :foreign_key => "parent_id"
   

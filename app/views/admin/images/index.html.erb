@@ -1,12 +1,16 @@
 <%= stylesheet_link_tag "table.css" %>
 
-<h1>Listing images</h1>
+<h2>Listing images <%= link_to 'New Image', new_admin_image_path %></h2>
 
 <table cellspacing="0">
   <tr>
-    <th>Mini</th>
-    <th>Title</th>
     <th></th>
+    <th><%= sort_link @search, :id %></th>
+    <th><%= sort_link @search, :title %></th>
+    <th><%= sort_link @search, :featured, "Home Page" %></th>
+    <th><%= sort_link @search, :gallery, "Gallery" %></th>
+    <th><%= sort_link @search, :published, "Visible" %></th>
+    <th><%= sort_link @search, :updated_at, "Updated" %></th>
     <th></th>
     <th></th>
   </tr>
@@ -14,8 +18,12 @@
 <% @images.each do |image| %>
   <tr>
     <td><%= link_to(image_tag(image.data(:small)),admin_image_path(image)) %></td>
+    <td><%= image.id %></td>
     <td><%= link_to(image.title,admin_image_path(image))%></td>
-    <td><%= link_to 'Show', admin_image_path(image) %></td>
+    <td><%= image.featured %></td>
+    <td><%= image.gallery %></td>
+    <td><%= image.published %></td>
+    <td><%= image.updated_at.to_s(:short) %></td>
     <td><%= link_to 'Edit', edit_admin_image_path(image) %></td>
     <td><%= link_to 'Destroy', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -23,5 +31,6 @@
 </table>
 
 <br />
-
+<h3>
 <%= link_to 'New Image', new_admin_image_path %>
+</h3>

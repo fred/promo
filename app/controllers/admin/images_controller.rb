@@ -4,13 +4,17 @@ class Admin::ImagesController < Admin::BaseController
   # GET /images
   # GET /images.xml
   def index
-    @images = Image.all
+    @per_page = 10
+    @search = Image.search(params[:search])
+    @images = @search.order("id DESC").paginate(:page => params[:page], :per_page => @per_page)
+    @title = "Images Directory"
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @images }
     end
   end
+
 
   # GET /images/1
   # GET /images/1.xml
