@@ -1,10 +1,23 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+      $(function() {
+        /* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+        /* For cell text alignment */
+        $("table td:first-child, table th:first-child").addClass("first");
+        /* For removing the last border */
+        $("table td:last-child, table th:last-child").addClass("last");
+      });
+  });
+</script>
+
 <% @title ||= "Users" %>
 
-<table id="hor-minimalist-b">
-  <caption><%= @title %></caption>
+<table cellspacing="0" >  <caption><%= @title %></caption>
 	<thead>
     <tr>
       <th>Name</th>
+      <th>Email</th>
       <th>Admin</th>
       <th>Created</th>
       <th>Updated</th>
@@ -17,6 +30,9 @@
   <tr>
     <td class="mouse" onclick=<%="document.location.href='#{admin_user_path(user)}'"%>>
       <%= link_to(user.name, admin_user_path(user)) %>
+    </td>
+    <td class="mouse" onclick=<%="document.location.href='#{admin_user_path(user)}'"%>>
+      <%= link_to(user.email, admin_user_path(user)) %>
     </td>
     <td>
       <%= user.admin? %>
