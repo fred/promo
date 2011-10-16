@@ -1,0 +1,21 @@
+<% @messages.each do |message| %>
+
+ID: <%= message.id %>
+Name: <%=h message.name %>
+Email: <%=h message.email %>
+<% unless message.phone_number.empty? %>
+Phone: <%=h message.phone_number %>
+<% end %>
+<% unless message.skype.empty? %>
+Skype: <%=h message.skype %>
+<% end %>
+<% unless message.twitter.empty? %>
+Twitter: <%=h message.twitter %>
+<% end %>
+IP: <%= message.remote_ip %>
+Date: <%= time_ago_in_words(message.created_at) %> ago (<%= message.created_at.to_s(:short) %>)
+Message: <%=h message.body %>
+
+-----------------------------------------------
+  
+<% end %>

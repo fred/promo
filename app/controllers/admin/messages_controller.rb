@@ -11,6 +11,7 @@ class Admin::MessagesController < Admin::BaseController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @messages }
+      format.text { @messages = Message.all }
     end
   end
 
